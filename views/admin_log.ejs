@@ -1,0 +1,28 @@
+<%- include('include/admin_header') -%>
+
+<main class="container">
+    <div class="d-flex justify-content-center p-5">
+        <form method="POST" class="d-flex flex-column justify-content-around align-items-center " id="form">
+            <h3 class="text-center text-light">Hi Admin.</h3>
+            <div class="form-group mt-5 input-control">
+                <input autocomplete="off" type="text" name="username" id="username" class=" inp" placeholder="SuperUserName">
+                <p class="err text-light fw-bold mt-2"></p>
+                <i class="fa-solid fa-user icon"></i>
+            </div>
+            <div class="form-group mt-3 input-control">
+                <input autocomplete="off" type="password" name="password" id="password" class=" inp" placeholder="Password">
+                <p class="err text-light mt-2 fw-bold"></p>
+                <i class="fa-solid fa-eye icon"></i>
+            </div>
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+    </div>
+    <div class="text-center">
+      <a class="text-light" href="/users/login">Go to Back</a>
+    </div>
+</main>
+
+
+
+ <script src="/js/admin_log.js"></script>
+<%- include('include/footer') -%>

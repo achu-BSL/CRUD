@@ -1,0 +1,29 @@
+<%- include('include/header') -%>
+
+
+<main class="container">
+    <div class="card d-flex justify-content-center p-5">
+        <h3 class="text-center title">Hi, Welcome Back.</h3>
+        <form method="POST" class="d-flex flex-column justify-content-around " id="form">
+            <div class="form-group mt-5 input-control">
+                <input autocomplete="off" type="text" name="username" id="username" class="form-control inp" placeholder="username">
+                <p class="err"></p>
+                <i class="fa-solid fa-user icon"></i>
+            </div>
+            <div class="form-group mt-3 mb-3 input-control">
+                <input autocomplete="off" type="password" name="password" id="password" class="form-control inp" placeholder="password">
+                <i id="passIcon" class="icon fa-solid fa-eye"></i>
+                <p class="err"></p>
+            </div>
+            <button class="btn btn-primary" type="submit">Log in</button>
+        </form>
+        <p class="fw-semibold">Don't have account ? <a class="text-light fw-semibold" href="register">Sign Up</a></p>
+        <div>
+            <a class="btn btn-outline-light" href="/admin">Admin</a>
+        </div>
+    </div>
+    <div id="msgQueue"></div>
+</main>
+<script src="/js/login.js"></script>
+
+<%- include('include/footer') -%>

@@ -1,0 +1,38 @@
+<%- include('include/admin_header') -%>
+ <main class="container p-5">
+    <div class="table form d-flex flex-column justify-content-center align-items-center">
+        <div class="table d-flex justify-content-around m-4">
+            <a class="btn btn-outline-light fw-semibold" href="admin/add-user">Add User</a>
+            <button class="btn btn-outline-light fw-semibold logout">log out</button>
+          </div>
+        <div class="d-flex align-items-center flex-column bg-light">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>no.</th>
+                    <th>username</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Access</th>
+                  </tr>
+                </thead>
+                <tbody id="tBody">
+                    <!-- <%if(locals.users){%>
+                        <%for(let i = 0; i < locals.users.length; i++){%>
+                            <tr class="table-active">
+                                <th scope="row"><%=i+1%></th>
+                                <td><%= locals.users[i].username %></td>
+                                <td><%= locals.users[i].email %></td>
+                                <td><i class="fa-solid fa-pen"></i><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                        <%}%>
+                    <%}%> -->
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <div id="msgQueue"></div>
+ </main>
+
+ <script src="/js/admin_home.js"></script>
+ <%- include('include/footer') -%>

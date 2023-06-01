@@ -1,0 +1,19 @@
+<%- include('include/header') -%>
+
+
+<style>
+    html{
+        background-image: url('/img/home.jpg');
+    }
+</style>
+
+<main class="card home d-flex align-items-center">
+    <div class="container p-5">
+        <h3 class="h3 text-light">Hi <%= user %>, Welcome to Home page.</h3>
+    </div>
+    <button class="btn home mb-4 logout">Logout</button>    
+</main>
+
+<script src="/js/home.js"></script>
+
+<%- include('include/footer') -%>
