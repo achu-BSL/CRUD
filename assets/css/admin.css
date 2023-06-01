@@ -1,0 +1,86 @@
+body{
+    background: url('/img/admin.jpg');
+    background-size: cover;
+}
+
+.form{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.table{ 
+    min-width: 80vw;
+}
+
+input{
+    display: block;
+    width: 300px;
+    height: 40px;
+    background-color: rgba(96,147,174, 0.4);
+    border: 1px solid black;
+    border-radius: 8px;
+    color: white;
+    backdrop-filter: blur(4px);
+    box-shadow: 5px 8px 20px 6px rgba(22, 20, 88, 0.9);
+    padding-left: 10px;
+}
+
+input::placeholder{
+    color: aliceblue;
+}
+
+input:focus{
+    border: 1px solid rgb(242, 237, 237);
+    outline: none;
+    color: aqua;
+}
+button{
+    background: rgba(253,199,146,255);
+    width: 80px;
+    border: 1px solid black;
+    border-radius: 6px;
+    box-shadow: 5px 8px 20px 6px rgba(22, 20, 88, 0.9);
+}
+
+.input-control.success input{
+    border-color: greenyellow;
+
+  }
+
+.input-control.err input{
+    border-color: red;
+}
+
+.input-control {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  color:#bfc4f4;
+}
+
+.btn {
+    background-color: transparent;
+    width: 130px;
+}
+
+
+#msgQueue{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  .msg{
+    background-color: #555872;
+    border: 1px solid black;
+    border-radius: 6px;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+  }

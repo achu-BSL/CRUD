@@ -1,0 +1,100 @@
+html {
+    background: url("/img/clouds-anime-sky-4k-l3.jpg");
+    background-size: cover;
+  }
+
+  .card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #b264a4;
+    background-color: rgba(116,110,166,0.8);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 15px 15px rgba(179, 107, 160, 0.3);
+    min-width: 400px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+  }
+
+
+.inp {
+    background-color: rgba(179, 107, 160, 0.3);
+    color: white;
+  }
+
+  .inp::placeholder {
+    color: white;
+  }
+
+  .inp:focus{
+    background-color: rgba(179, 107, 160, 0.5);
+    color: white;
+    border-color: #b264a4;
+  }
+
+  .title{
+    color: #c7ccd2;
+  }
+
+  .btn{
+    background-color: #5a588b;
+    border: 1px solid #c7ccd2;
+  }
+
+  .btn:hover{
+    background-color: #5a5881;
+  }
+
+
+  .card.home{
+    border: 1px solid #b70c3a;
+    background-color: rgba(9,82,122, 0.6);
+    min-height: 200px;
+    box-shadow: 5px 8px 18px 10px rgba(191,67,95,0.4);
+  }
+
+  .btn.home{
+    background-color: rgba(250,183,130, 0.8);
+  }
+  .btn.home:hover{
+    background-color: rgba(251, 129, 36, 0.8);
+  }
+
+
+  .input-control.success input{
+    border-color: greenyellow;
+
+  }
+
+.input-control.err input{
+    border-color: red;
+}
+
+.input-control {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  color:#4e548e;
+}
+
+
+#msgQueue{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+}
+
+.msg{
+  margin-top: 8px;
+  padding: 10px;
+  background-color: #4e548e;
+  color: white;
+  border: ;
+}
