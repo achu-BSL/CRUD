@@ -2,8 +2,7 @@ const express = require('express');
 const userRouter = require('./routers/userRoutes.js')
 const adminRouter = require('./routers/adminRoutes.js')
 const path = require('path')
-const connect = require('./database/connect.js')
-const morgan = require('morgan')
+const mongoose = require('mongoose')
 const session = require('express-session')
 const cookie = require('cookie-parser')
 require('dotenv').config();
@@ -11,11 +10,11 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-connect()
+
+//connect
+mongoose.connect("mongodb://127.0.0.1:27017/user_management_system")
 //  .then(()=>{
-    app.listen(port, ()=>{
-        console.log(`Server is running on port ${port}`);
-    });
+    
 //  })
 //  .catch(err=>{
 //     console.log(err.message)
@@ -51,3 +50,8 @@ app.get("/", (req, res)=>{
     else res.redirect('/users/login')       
 })
 
+
+
+app.listen(port, ()=>{
+    console.log(`Server is running on port ${port}`);
+});
