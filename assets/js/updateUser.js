@@ -37,18 +37,22 @@ formInp.addEventListener('submit', async (e)=>{
         
         if(data.err === 'username already taken'){
             setError(usernameInp, 'User Name Not Available..!')
+            showMessage("User Name Not Available..")
         } else if (data.err === 'email already taken'){
             setSuccess(usernameInp)
             setError(emailInp, 'Email Already Taken..')
+            showMessage('Email Already Taken..')
         } else if (data.err === 'Nothing changed'){
             setError(usernameInp, 'No changes')
             setError(emailInp, 'No changes')
+            showMessage("No changes")
         }
     } else if (response.status === 200){
         exUsername = usernameInp.value
         exEmail = emailInp.value
-        setSuccess(usernameInp , 'update success..!')
+        setSuccess(usernameInp , 'update success.')
         setSuccess(emailInp)
+        showMessage('Updated Success...')
     } 
 })
 
@@ -71,3 +75,19 @@ const setSuccess = (element, message)=>{
     inputControler.classList.add('success')
 }
 
+
+
+/**Right Message */
+
+const msgQueue = document.getElementById('msgQueue')
+
+function showMessage(msg){
+    const msgContainer = document.createElement('div')
+    msgContainer.classList.add('msg')
+    msgContainer.textContent = msg
+    msgQueue.appendChild(msgContainer)
+
+    setTimeout(function(){
+        msgContainer.remove()
+    }, 5000)
+}

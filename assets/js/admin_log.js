@@ -22,10 +22,12 @@ form.addEventListener('submit', async (e)=>{
         const data = await response.json()
         if(data.err === 'admin'){
             setError(username, "Not A Admin..!")
+            showMessage("Not A Admin...!")
         }
         else if(data.err === "password"){
             setSuccess(username)
             setError(password, "Password Not Matching..!")
+            showMessage("Password Not Matching..!")
         }
     } else if(response.status === 200) {
         window.location.href = "/admin"
@@ -52,4 +54,20 @@ const setSuccess = (element, message)=>{
     errorDisplay.innerHTML = message || ''
     inputControler.classList.remove('err')
     inputControler.classList.add('success')
+}
+
+
+/**Right Message */
+
+const msgQueue = document.getElementById('msgQueue')
+
+function showMessage(msg){
+    const msgContainer = document.createElement('div')
+    msgContainer.classList.add('msg')
+    msgContainer.textContent = msg
+    msgQueue.appendChild(msgContainer)
+
+    setTimeout(function(){
+        msgContainer.remove()
+    }, 5000)
 }

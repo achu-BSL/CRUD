@@ -82,7 +82,10 @@ const fetchData = async ()=>{
                         body: JSON.stringify(dt)
                     })
                     .then(res => {
-                        if(res.status === 200) fetchData()
+                        if(res.status === 200){
+                            showMessage('Deleter Success..')
+                            fetchData()
+                        } 
                     })
                     .catch(err => console.log(err.message))
                    
@@ -91,15 +94,16 @@ const fetchData = async ()=>{
                 access.addEventListener('click',  ()=>{
                     console.log("Event")
                     const tr = access.parentElement.parentElement
-                    let index = tr.querySelector('th').innerHTML
+                    let index = tr.querySelector('th').innerText
                     index = index - 1
 
                     const url = 'http://localhost:3000/admin/update-user'
-                    const userAccess = data[index].admin
+                    let isAdmin = data[index].admin
                     const body = {
-                        admin: userAccess ? false : true,
+                        admin: isAdmin ? false : true,
                         username: data[index].username
                     }
+
                     fetch(url,{
                         method: 'PUT',
                         headers: {
@@ -109,9 +113,18 @@ const fetchData = async ()=>{
                     })
                     .then(res => {
                         if(res.ok) {
+                            if(isAdmin){
+                                showMessage(`You Demoted ${data[index].username} to user`)
+                                isAdmin = false
+                            } else {
+                                showMessage(`You Prometed ${data[index].username} to Admin`)
+                            }
                             fetchData()
                         }
                         else console.log(res.status)
+
+                              // Add the event listener back in case of error
+                              access.addEventListener('click');
                     })
                     .catch(err =>{
                         console.log(err)

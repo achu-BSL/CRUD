@@ -74,13 +74,15 @@ button{
     position: fixed;
     right: 20px;
     bottom: 20px;
+  
   }
   
   .msg{
-    background-color: #555872;
-    border: 1px solid black;
-    border-radius: 6px;
-    color: white;
+    margin-top: 8px;
     padding: 10px;
-    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.196);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 4px 4px 3px 1px rgba(32, 30, 31, 0.4);
   }
