@@ -1,8 +1,9 @@
-const tBody = document.getElementById('tBody')
 
+const tBody = document.getElementById('tBody')
+const searchInp = document.getElementById('search')
 
 const fetchData = async ()=>{
-    const url = "http://localhost:3000/admin/api/get-all-user"
+    const url = `http://localhost:3000/admin/api/get-all-user?prefix=${searchInp.value}`
     
     const response = await fetch(url,{
         method: 'GET',
@@ -92,7 +93,6 @@ const fetchData = async ()=>{
                 })
 
                 access.addEventListener('click',  ()=>{
-                    console.log("Event")
                     const tr = access.parentElement.parentElement
                     let index = tr.querySelector('th').innerText
                     index = index - 1
@@ -122,9 +122,6 @@ const fetchData = async ()=>{
                             fetchData()
                         }
                         else console.log(res.status)
-
-                              // Add the event listener back in case of error
-                              access.addEventListener('click');
                     })
                     .catch(err =>{
                         console.log(err)
@@ -157,6 +154,13 @@ logOutBtn.addEventListener('click', async()=>{
     })
     if(response.ok) window.location.href = '/admin/login'
     else console.log('OOPS something wrong..!')
+})
+
+
+
+/**Adding event to Search input */
+searchInp.addEventListener('keyup', ()=>{
+    fetchData()
 })
 
 

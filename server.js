@@ -13,12 +13,12 @@ const port = process.env.PORT || 3001;
 
 //connect
 mongoose.connect("mongodb://127.0.0.1:27017/user_management_system")
-//  .then(()=>{
-    
-//  })
-//  .catch(err=>{
-//     console.log(err.message)
-//  })
+ .then(()=>{
+    console.log("database connected..")
+ })
+ .catch(err=>{
+    console.log(err.message)
+ })
 
 
 

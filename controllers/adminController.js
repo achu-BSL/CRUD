@@ -44,7 +44,12 @@ const homePost = async (req, res)=>{
 const getAllUser = async (req, res)=>{
     if(!req.session.admin) return res.redirect("admin/login")
     try{
-        const users = await UserModel.find({username: {$ne: req.session.admin}})
+        const prefix = req.query.prefix
+        const query = {$and: [
+            {username: {$regex: `^${prefix}`}},
+            {username: {$ne: req.session.admin}}
+        ]}
+        const users = await UserModel.find(query)
         res.status(200).json(users)
     } catch (err) {
         res.status(500).json({msg: err.message})

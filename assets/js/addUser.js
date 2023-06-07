@@ -36,6 +36,7 @@ form.addEventListener('submit', async (e) =>{
         showMessage("Provide another email")
     }else {
         if(checkValid()) {
+            setSuccess(userName, "User Added Seccess")
             showMessage(`Added a new user`)
         }
     }
@@ -51,11 +52,11 @@ const setError = (element, message)=>{
     inputControl.classList.remove('success')
 }
 
-const setSuccess = (element)=>{
+const setSuccess = (element, msg)=>{
     const inputControl = element.parentElement
     const errorDisplay = inputControl.querySelector('.err')
 
-    errorDisplay.innerHTML = ''
+    errorDisplay.innerHTML = msg || ''
     inputControl.classList.add('success')
     inputControl.classList.remove('err')
 }
